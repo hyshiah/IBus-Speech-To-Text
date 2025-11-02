@@ -38,12 +38,13 @@ Dependencies
 - meson > 0.59.0
 - python 3.5.0
 - babel (https://pypi.org/project/Babel/) which is probably packaged by your distribution
-- ibus > 1.5.0 (the higher the better, it was tested with 1.5.26)
+- ibus > 1.5.0 (the higher the better, it was tested with 1.5.26)(sudo apt install libibus-1.0-dev )
 - Gio
 - Gstreamer 1.20
+- gettext(sudo apt install gettext)
 
 The setup dialog depends on:
-- libadwaita 1.1.0
+- libadwaita 1.1.0(sudo apt install libadwaita-1-dev)
 - Gtk 4
 
 You also need gst-VOSK installed (https://github.com/PhilippeRo/gst-VOSK/).
