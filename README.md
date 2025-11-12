@@ -39,7 +39,7 @@ Dependencies
 - python 3.5.0
 - babel (https://pypi.org/project/Babel/) which is probably packaged by your distribution
 - ibus > 1.5.0 (the higher the better, it was tested with 1.5.26)(sudo apt install libibus-1.0-dev )
-- Gio
+- Gio (pip install PyGObject==3.50.2, sudo apt-get install gobject-introspection, libgirepository1.0-dev )
 - Gstreamer 1.20
 - gettext(sudo apt install gettext)
 
