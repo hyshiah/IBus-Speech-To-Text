@@ -67,3 +67,13 @@ Activate the Input Method through the IBus menu (that depends on your desktop) a
 It might seem obvious but the quality of the microphone used largely influences the accuracy of the voice recognition.
 
 This Input Method can also be enabled and disabled with the default shorcut ("Win + Space") used to switch between IBus Input Methods. By default, when IBus STT is enabled, voice recognition is not started immediately but there is a setting to change this behaviour. If enabled, you can start and stop voice recognition with the above shortcut.
+
+事前準備(X11, debian 12)
+============
+- ibus address (输出 ibus-daemon 的 D-Bus 地址)
+- dbus-monitor --address unix:abstract=/home/rock/.cache/ibus/dbus-F6t8qKbD,guid=63d5b55a70f778c6304a12156913fdcb(查看總線)
+- dbus-send --bus=unix:abstract=/home/rock/.cache/ibus/dbus-F6t8qKbD,guid=63d5b55a70f778c6304a12156913fdcb
+  --print-reply \
+  --dest=org.freedesktop.IBus \
+  /org/freedesktop/IBus \
+  org.freedesktop.IBus.GetGlobalEngine(查看 ibus 引擎)
