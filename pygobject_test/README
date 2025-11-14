@@ -1,0 +1,47 @@
+Shell command:
+busctl --user tree
+
+Service org.test.shiah(SERVICE_ID):
+└─/com
+  └─/com/test
+    └─/com/test/shiah
+      └─/com/test/shiah/dbustest(主物件: OBJECT_PATH)
+        └─/com/test/shiah/dbustest/prompt(子物件: OBJECT_PATH)
+
+Shell command:(查詢主物件)
+busctl --user introspect  org.test.shiah /com/test/shiah/dbustest
+
+NAME                                TYPE      SIGNATURE RESULT/VALUE FLAGS
+org.freedesktop.DBus.Introspectable interface -         -            -
+.Introspect                         method    -         s            -
+org.freedesktop.DBus.Peer           interface -         -            -
+.GetMachineId                       method    -         s            -
+.Ping                               method    -         -            -
+org.freedesktop.DBus.Properties     interface -         -            -
+.Get                                method    ss        v            -
+.GetAll                             method    s         a{sv}        -
+.Set                                method    ssv       -            -
+.PropertiesChanged                  signal    sa{sv}as  -            -
+org.test.shiah.Main                 interface -         -            -
+.Ping                               method    s         s            -
+
+
+Shell command:(查詢子物件)
+busctl --user introspect  org.test.shiah /com/test/shiah/dbustest/prompt
+
+NAME                                TYPE      SIGNATURE RESULT/VALUE FLAGS
+org.freedesktop.DBus.Introspectable interface -         -            -
+.Introspect                         method    -         s            -
+org.freedesktop.DBus.Peer           interface -         -            -
+.GetMachineId                       method    -         s            -
+.Ping                               method    -         -            -
+org.freedesktop.DBus.Properties     interface -         -            -
+.Get                                method    ss        v            -
+.GetAll                             method    s         a{sv}        -
+.Set                                method    ssv       -            -
+.PropertiesChanged                  signal    sa{sv}as  -            -
+org.test.shiah.Prompt               interface -         -            -
+.Exit                               method    -         -            -
+.GetCoordinates                     method    -         ii           -
+.UpdateCoordinates                  method    ii        -            -
+.CoordinatesChanged                 signal    ii        -            -
